@@ -1,3 +1,20 @@
+---
+const navItems = [
+    {
+        path: '/shop',
+        label: 'Shop',
+    },
+    {
+        path: '/about',
+        label: 'About',
+    },
+    {
+        path: '/blog',
+        label: 'Blog',
+    },
+    
+]
+---
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
@@ -19,7 +36,11 @@
 				<span role="img" aria-label="hotdog">🌭</span>
 				sndwch
 			</a>
-
+            <nav>
+                {navItems.map((item) =>{
+                    return <a href={item.path}>{item.label}</a>;
+                })}
+            </nav>
 			<!-- TODO: add nav -->
 		</header>
         <slot></slot>
